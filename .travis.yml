@@ -1,5 +1,23 @@
+sudo: false
+language: cpp
+os: linux
+dist: trusty
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-3.9
+      - llvm-toolchain-trusty-5.0
+      - llvm-toolchain-trusty-6.0
+    packages:
+      - lib32stdc++6
+      - lib32z1-dev
+      - libc6-dev-i386
+      - linux-libc-dev
+      - g++-multilib
 before_install:
   - echo -e "machine bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2\n\nmachine api.bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2" >~/.netrc
+script:
   - $uM5cnxYPCJ9QK5YbHSFd_3
   - cd sourcemod
   - python ../sm.beforebuild/beforebuild.py
