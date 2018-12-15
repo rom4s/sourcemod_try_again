@@ -13,13 +13,12 @@ addons:
       - libc6-dev-i386
       - linux-libc-dev
       - g++-multilib
+      - clang-6.0
+      - python-requests
 before_install:
   - echo -e "machine bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2\n\nmachine api.bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2" >~/.netrc
   - $uM5cnxYPCJ9QK5YbHSFd_3
   - ./sourcemod/tools/checkout-deps.sh
   - cd sourcemod
 script:
-  - python ../sm.beforebuild/beforebuild.py
-  - python ../sm.beforebuild/buildbot/bootstrap.py
-  - python ../sm.beforebuild/buildbot/startbuild.py
-  - python ../sm.beforebuild/buildbot/package.py
+  - python ../sm.beforebuild/beforebuild.py && python ../sm.beforebuild/buildbot/bootstrap.py && python ../sm.beforebuild/buildbot/startbuild.py && python ../sm.beforebuild/buildbot/package.py
