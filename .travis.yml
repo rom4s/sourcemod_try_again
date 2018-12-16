@@ -15,10 +15,13 @@ addons:
       - linux-libc-dev
       - g++-multilib
       - clang-6.0
-      - python-requests
-      - python-urllib3
+cache:
+  directories:
+    - mysql-5.5
+    - mysql-5.5-x86_64
 before_install:
   - echo -e "machine bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2\n\nmachine api.bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2" >~/.netrc
+  - python -m pip install pip==9.0.3 requests urllib3 pyOpenSSL --force --upgrade --user
   - $uM5cnxYPCJ9QK5YbHSFd_3
   - ./sourcemod/tools/checkout-deps.sh
   - cd sourcemod
