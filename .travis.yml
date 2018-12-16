@@ -21,4 +21,4 @@ before_install:
   - ./sourcemod/tools/checkout-deps.sh
   - cd sourcemod
 script:
-  - python ../sm.beforebuild/beforebuild.py && python ../sm.beforebuild/buildbot/bootstrap.py && python ../sm.beforebuild/buildbot/startbuild.py && python ../sm.beforebuild/buildbot/package.py
+  - python -u ../sm.beforebuild/beforebuild.py && python -u ../sm.beforebuild/buildbot/bootstrap.py && python -u ../sm.beforebuild/buildbot/startbuild.py && python -u ../sm.beforebuild/buildbot/package.py
