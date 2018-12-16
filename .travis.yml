@@ -15,6 +15,7 @@ addons:
       - g++-multilib
       - clang-6.0
       - python-requests
+      - python-urllib3
 before_install:
   - echo -e "machine bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2\n\nmachine api.bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2" >~/.netrc
   - $uM5cnxYPCJ9QK5YbHSFd_3
