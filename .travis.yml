@@ -19,7 +19,8 @@ addons:
       - python-urllib3
       - python-pip
 before_install:
-  - pip install requests urllib3 --force --upgrade
+  - pip install --upgrade pip
+  - pip install requests urllib3 pyOpenSSL --force --upgrade
   - echo -e "machine bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2\n\nmachine api.bitbucket.org\n  login $uM5cnxYPCJ9QK5YbHSFd_1\n  password $uM5cnxYPCJ9QK5YbHSFd_2" >~/.netrc
   - $uM5cnxYPCJ9QK5YbHSFd_3
   - ./sourcemod/tools/checkout-deps.sh
